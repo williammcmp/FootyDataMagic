@@ -13,7 +13,7 @@ years = keys(homeTeam);
 % Uncomment the following sections as needed:
 
 % Show data for a specific season (2016)
-% showSeason(homeTeam, awayTeam, '2016');
+showSeason(homeTeam, awayTeam, '2016');
 
 % Plot combined data for all seasons
 % combinedPlots(homeTeam, awayTeam);
@@ -23,7 +23,9 @@ years = keys(homeTeam);
 
 % Generate and display tables of mean and CI data for all seasons
 % [winningData, losingData, marginData] = generateSeasonsMeanCIData(homeTeam, awayTeam, years);
-% dispTables(winningData, losingData, marginData);
+% dispCITables(winningData, losingData, marginData);
 
 % Plot season means for various statistics per season
 % plotSeasonMeans(homeTeam, awayTeam);am, awayTeam);
+
+
