@@ -9,21 +9,21 @@ function showSeason(homeTeam, awayTeam, year)
     % --------------------------
     
     % Winning scores fitted to normal distribution 
-    subplot(4,3,1)
+    subplot(3,3,1)
     winning = calWinningScores(homeTeam(year), awayTeam(year));
     pd = makedist('Normal');
     qqplot(winning, pd);
     title('QQ Plot of Winning Scores versus Normal Distribution');
 
     % Lossing scores fitted to normal distribution
-    subplot(4,3,2)
+    subplot(3,3,2)
     lossing = calLossingScores(homeTeam(year), awayTeam(year));
     pd = makedist('Normal');
     qqplot(lossing, pd);
     title('QQ Plot of Losing Scores versus Normal Distribution');
 
     % margin scores fitted to normal distribution
-    subplot(4,3,3)
+    subplot(3,3,3)
     margin = calMargins(homeTeam(year), awayTeam(year));
     pd = makedist('Normal');
     qqplot(margin, pd);
@@ -34,14 +34,14 @@ function showSeason(homeTeam, awayTeam, year)
     % --------------------------
     
     % Winning scores in histogram
-    subplot(4,3,4)
+    subplot(3,3,4)
     winning = calWinningScores(homeTeam(year), awayTeam(year));
     h = histogram(winning, 15);
     h.Normalization = 'pdf';
     title('Histogram of Winning scores');
 
     % Lossing scores in histogram
-    subplot(4,3,5)
+    subplot(3,3,5)
     lossing = calLossingScores(homeTeam(year), awayTeam(year));
     h = histogram(lossing, 15);
     h.Normalization = 'pdf';
@@ -49,7 +49,7 @@ function showSeason(homeTeam, awayTeam, year)
     xlabel("Points")
 
     % Margin scores in histogram
-    subplot(4,3,6)
+    subplot(3,3,6)
     margin = calMargins(homeTeam(year), awayTeam(year));
     h = histogram(margin, 15);
     h.Normalization = 'pdf';
@@ -62,7 +62,7 @@ function showSeason(homeTeam, awayTeam, year)
     % --------------------------
 
     % Winning scores in boxplots - more outliers in eariler seaons
-    subplot(4,3,7)
+    subplot(3,3,7)
     winning = calWinningScores(homeTeam(year), awayTeam(year));
     boxplot(winning);
     xlabel(year);
@@ -70,7 +70,7 @@ function showSeason(homeTeam, awayTeam, year)
     title("Boxplot of Winnings Scores")
 
     % Lossing scores in boxplots - more outliers in eariler seaons
-    subplot(4,3,8)
+    subplot(3,3,8)
     lossing = calLossingScores(homeTeam(year), awayTeam(year));
     boxplot(lossing);
     xlabel(year);
@@ -78,7 +78,7 @@ function showSeason(homeTeam, awayTeam, year)
     title("Boxplot of Losing Scores")
 
     % Margin scores in boxplots - more outliers in eariler seaons
-    subplot(4,3,9)
+    subplot(3,3,9)
     margin = calMargins(homeTeam(year), awayTeam(year));
     boxplot(margin);
     xlabel(year);
