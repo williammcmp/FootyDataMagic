@@ -13,19 +13,18 @@ years = keys(homeTeam);
 % Uncomment the following sections as needed:
 
 % Show data for a specific season (2016)
-showSeason(homeTeam, awayTeam, '2016');
+% showSeason(homeTeam, awayTeam, '2016');
 
 % Plot combined data for all seasons
-% combinedPlots(homeTeam, awayTeam);
+% showCombinedPlots(homeTeam, awayTeam);
 
 % Show data for each season (distributions, outliers)
 % showAllSeasons(homeTeam, awayTeam);
 
 % Generate and display tables of mean and CI data for all seasons
-% [winningData, losingData, marginData] = generateSeasonsMeanCIData(homeTeam, awayTeam, years);
-% dispCITables(winningData, losingData, marginData);
+% [winningData, losingData, marginData] = calSeasonsMeanCIData(homeTeam, awayTeam, years);
+% showCITables(winningData, losingData, marginData);
 
-% Plot season means for various statistics per season
-% plotSeasonMeans(homeTeam, awayTeam);am, awayTeam);
-
+% Plot season means for various statistics per season - will print the p-values for each stat
+showSeasonMeans(homeTeam, awayTeam);
 
