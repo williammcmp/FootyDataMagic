@@ -7,8 +7,7 @@ This MATLAB project is designed to analyze and visualize Australian Football Lea
 ## Prerequisites
 
 - MATLAB installed on your computer.
-- AFL data in .dat format organized by season (e.g., "2011", "2012", etc.).
-
+- git installed. if youbusve mac, git is aleady installed; else if windows, please install Git. 
 ## Getting Started
 
 1. Clone this repository to your local machine:
