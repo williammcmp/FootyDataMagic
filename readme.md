@@ -7,14 +7,13 @@ This MATLAB project is designed to analyze and visualize Australian Football Lea
 ## Prerequisites
 
 - MATLAB installed on your computer.
-- AFL data in .dat format organized by season (e.g., "2011", "2012", etc.).
-
+- git installed. if youbusve mac, git is aleady installed; else if windows, please install Git. (view further below). 
 ## Getting Started
 
 1. Clone this repository to your local machine:
 
     ```bash
-    git clone https://github.com/your-username/afl-data-analysis.git
+    git clone https://github.com/williammcmp/afl-data-analysis.git
     ```
 
 2. Open MATLAB and navigate to the project folder.
@@ -43,7 +42,7 @@ This MATLAB project is designed to analyze and visualize Australian Football Lea
 
 - `calVarianceCI.m`: Calculates the variance and confidence interval of data.
 
-- `data/`: Sample AFL data in .dat format provided for testing purposes.
+- `AFL/`: Sample AFL data in .dat format provided for testing purposes.
 
 ## Analysis Options
 
@@ -58,6 +57,81 @@ This MATLAB project is designed to analyze and visualize Australian Football Lea
 - `dispTables.m`: Displays tables of data, including winning scores, losing scores, and score margins with confidence intervals.
 
 - `plotSeasonMeans.m`: Produces plots of season means for various statistics.
+
+Certainly! Here's a simplified README file that includes all the installation instructions for Git:
+
+```markdown
+# Git Installation Guide
+
+## Introduction
+
+This guide will help you install Git on your computer. Git is a powerful version control system used to track changes in software development projects.
+
+## Installation Steps
+
+### Windows
+
+1. Download Git for Windows from [https://git-scm.com/download/win](https://git-scm.com/download/win).
+
+2. Run the downloaded installer.
+
+3. Follow the on-screen instructions, leaving all options at their default settings unless you have a specific reason to change them.
+
+### macOS
+
+1. Download Git for macOS from [https://git-scm.com/download/mac](https://git-scm.com/download/mac).
+
+2. Run the downloaded installer package (it has a `.pkg` extension).
+
+3. Follow the installation prompts. You may need to enter your password to complete the installation.
+
+### Linux (Ubuntu as an example)
+
+1. Open your terminal.
+
+2. Install Git using the package manager for your distribution. For Ubuntu, you can use `apt`:
+
+   ```bash
+   sudo apt update
+   sudo apt install git
+   ```
+
+## Verification
+
+To verify that Git is installed correctly, open your terminal or command prompt and run:
+
+```bash
+git --version
+```
+
+You should see the Git version information, confirming a successful installation.
+
+## Configuration
+
+After installing Git, configure your name and email:
+
+```bash
+git config --global user.name "Your Name"
+git config --global user.email "your.email@example.com"
+```
+
+Replace "Your Name" and "your.email@example.com" with your own information.
+
+## Getting Started
+
+You're now ready to use Git for version control in your projects. Start by creating a new repository or cloning an existing one. Refer to Git documentation and tutorials for further guidance.
+
+## Additional Resources
+
+- [Official Git Documentation](https://git-scm.com/doc)
+- [GitHub Learning Lab](https://lab.github.com/)
+- [Atlassian Git Tutorials](https://www.atlassian.com/git/tutorials)
+- [Git and GitHub for Beginners](https://guides.github.com/activities/hello-world/)
+
+Happy coding with Git!
+```
+
+This README includes simplified installation instructions for Windows, macOS, and Linux, along with configuration steps and additional resources. You can copy and paste this content into a single README.md file.
 
 ## Contributing
 
