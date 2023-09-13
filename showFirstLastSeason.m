@@ -35,7 +35,7 @@ function showFirstLastSeason(homeTeam, awayTeam, year1, year2)
     % Winning scores in boxplots
     subplot(2,1,2)
     winning1 = calWinningScores(homeTeam(year1), awayTeam(year1));
-    winning2 = calWinningScores(homeTeam(year1), awayTeam(year1));
+    winning2 = calWinningScores(homeTeam(year2), awayTeam(year2));
     data = [];
     index = [];
 
@@ -46,6 +46,9 @@ function showFirstLastSeason(homeTeam, awayTeam, year1, year2)
     boxplot(data, index)
     xlabel('Season (year)');
     ylabel('Points');
+    [h, pValue] = ttest2(winning1, winning2, "Vartype","equal");
+    subtitle("t-test P-value : " + num2str(pValue))
+    title("Winning scores over the years")
 
     fig2 = figure;
     set(fig2, "Name", "Plots of Losings Score", "Position", [10, 10, 1100, 900]);
@@ -82,7 +85,7 @@ function showFirstLastSeason(homeTeam, awayTeam, year1, year2)
     % losing scores in boxplots
     subplot(2,1,2)
     losing1 = calLossingScores(homeTeam(year1), awayTeam(year1));
-    losing2 = calLossingScores(homeTeam(year1), awayTeam(year1));
+    losing2 = calLossingScores(homeTeam(year2), awayTeam(year2));
     data = [];
     index = [];
 
@@ -93,6 +96,9 @@ function showFirstLastSeason(homeTeam, awayTeam, year1, year2)
     boxplot(data, index)
     xlabel('Season (year)');
     ylabel('Points');
+    [h, pValue] = ttest2(losing1, losing2, "Vartype","equal");
+    subtitle("t-test P-value : " + num2str(pValue))
+    title("Losing scores over the years")
 
     fig3 = figure;
     set(fig3, "Name", "Plots of Score Margins (home - away)", "Position", [10, 10, 1100, 900]);
@@ -129,16 +135,17 @@ function showFirstLastSeason(homeTeam, awayTeam, year1, year2)
     % Margin scores in boxplots
     subplot(2,1,2)
     margin1 = calMargins(homeTeam(year1), awayTeam(year1));
-    margin2 = calMargins(homeTeam(year1), awayTeam(year1));
-    data = [];
-    index = [];
-
+    margin2 = calMargins(homeTeam(year2), awayTeam(year2));
     data = [margin1;margin2];
-    index = [index;repmat(year1, length(margin1),1)];
-    index = [index;repmat(year2, length(margin2),1)];
-    
+    index = [repmat(year1, length(margin1),1);repmat(year2, length(margin2),1)];
+    disp(data)
+    disp(index)
     boxplot(data, index)
     xlabel('Season (year)');
     ylabel('Points');
+    [h, pValue] = ttest2(margin1, margin2, "Vartype","equal");
+    subtitle("t-test P-value : " + num2str(pValue))
+    title("Score margins over the years")
+    disp([h,pValue])
 
 end
