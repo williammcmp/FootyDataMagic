@@ -43,7 +43,7 @@ This MATLAB project is designed to analyze and visualize Australian Football Lea
 
 - `calVarianceCI.m`: Calculates the variance and confidence interval of data.
 
-- `data/`: Sample AFL data in .dat format provided for testing purposes.
+- `AFL/`: Sample AFL data in .dat format provided for testing purposes.
 
 ## Analysis Options
 
