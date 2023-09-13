@@ -16,6 +16,8 @@ function showAllSeasons(homeTeam, awayTeam)
         subplot(3,4,i)
         qqplot(winning, pd);
         title(years{i});
+        [H, pValue, W] = swtest(winning);
+        subtitle("P-value : " + num2str(pValue) + "  W: " + num2str(W));
         xlabel("Points")
     end
     
@@ -28,6 +30,8 @@ function showAllSeasons(homeTeam, awayTeam)
         subplot(3,4,i)
         qqplot(lossing, pd);
         title(years{i});
+        [H, pValue, W] = swtest(lossing);
+        subtitle("P-value : " + num2str(pValue) + "  W: " + num2str(W));
         xlabel("Points")
     end
 
@@ -41,6 +45,8 @@ function showAllSeasons(homeTeam, awayTeam)
         subplot(3,4,i)
         qqplot(margin, pd);
         title(years{i});
+        [H, pValue, W] = swtest(margin);
+        subtitle("P-value : " + num2str(pValue) + "  W: " + num2str(W));
         xlabel("Points")
     end
     

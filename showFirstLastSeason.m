@@ -13,6 +13,9 @@ function showFirstLastSeason(homeTeam, awayTeam, year1, year2)
     h = histogram(winning, 15);
     h.Normalization = "pdf";
     title("Histogram of Winning scores - " + num2str(year1));
+    [H, pValue, W] = swtest(winning);
+    subtitle("P-value : " + num2str(pValue) + "  W: " + num2str(W));
+    xlabel('Points')
 
     % Winning scores in histogram year2
     subplot(2,2,2)
@@ -20,6 +23,8 @@ function showFirstLastSeason(homeTeam, awayTeam, year1, year2)
     h = histogram(winning, 15);
     h.Normalization = "pdf";
     title("Histogram of Winning scores - " + num2str(year2));
+    [H, pValue, W] = swtest(winning);
+    subtitle("P-value : " + num2str(pValue) + "  W: " + num2str(W));
     xlabel("Points")
 
 
@@ -55,6 +60,9 @@ function showFirstLastSeason(homeTeam, awayTeam, year1, year2)
     h = histogram(losing, 15);
     h.Normalization = "pdf";
     title("Histogram of Losing scores - " + num2str(year1));
+    [H, pValue, W] = swtest(losing);
+    subtitle("P-value : " + num2str(pValue) + "  W: " + num2str(W));
+    xlabel('Points')
 
     % Losing scores in histogram year2
     subplot(2,2,2)
@@ -62,7 +70,9 @@ function showFirstLastSeason(homeTeam, awayTeam, year1, year2)
     h = histogram(losing, 15);
     h.Normalization = "pdf";
     title("Histogram of Losing scores - " + num2str(year2));
-    xlabel("Points")
+    [H, pValue, W] = swtest(losing);
+    subtitle("P-value : " + num2str(pValue) + "  W: " + num2str(W));
+    xlabel('Points')
 
 
     % --------------------------
@@ -97,6 +107,9 @@ function showFirstLastSeason(homeTeam, awayTeam, year1, year2)
     h = histogram(margin, 15);
     h.Normalization = "pdf";
     title("Histogram of Margin scores - " + num2str(year1));
+    [H, pValue, W] = swtest(margin);
+    subtitle("P-value : " + num2str(pValue) + "  W: " + num2str(W));
+    xlabel('Points')
 
     % Margin scores in histogram year2
     subplot(2,2,2)
@@ -104,7 +117,9 @@ function showFirstLastSeason(homeTeam, awayTeam, year1, year2)
     h = histogram(margin, 15);
     h.Normalization = "pdf";
     title("Histogram of Margin scores - " + num2str(year2));
-    xlabel("Points")
+    [H, pValue, W] = swtest(margin);
+    subtitle("P-value : " + num2str(pValue) + "  W: " + num2str(W));
+    xlabel('Points')
 
 
     % --------------------------

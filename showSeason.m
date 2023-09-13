@@ -14,20 +14,26 @@ function showSeason(homeTeam, awayTeam, year)
     pd = makedist('Normal');
     qqplot(winning, pd);
     title('QQ Plot of Winning Scores versus Normal Distribution');
-
+    [H, pValue, W] = swtest(winning);
+    subtitle("P-value : " + num2str(pValue) + "  W: " + num2str(W));
+    
     % Lossing scores fitted to normal distribution
     subplot(3,3,2)
     lossing = calLossingScores(homeTeam(year), awayTeam(year));
     pd = makedist('Normal');
     qqplot(lossing, pd);
     title('QQ Plot of Losing Scores versus Normal Distribution');
-
+    [H, pValue, W] = swtest(lossing);
+    subtitle("P-value : " + num2str(pValue) + "  W: " + num2str(W));
+    
     % margin scores fitted to normal distribution
     subplot(3,3,3)
     margin = calMargins(homeTeam(year), awayTeam(year));
     pd = makedist('Normal');
     qqplot(margin, pd);
     title('QQ Plot of score Margins versus Normal Distribution');
+    [H, pValue, W] = swtest(margin);
+    subtitle("P-value : " + num2str(pValue) + "  W: " + num2str(W));
 
     % --------------------------
     % is normal - use histograms
