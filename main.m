@@ -1,3 +1,4 @@
+% ougsdf;iugwedfiugwef
 clear;
 close all; 
 % Define the folder path to your .dat files
@@ -13,7 +14,7 @@ years = keys(homeTeam);
 % Uncomment the following sections as needed:
 
 % Show data for a specific season (2016)
-% showSeason(homeTeam, awayTeam, '2016');
+showSeason(homeTeam, awayTeam, '2016');
 
 % Plot combined data for all seasons
 % showCombinedPlots(homeTeam, awayTeam);
@@ -26,5 +27,5 @@ years = keys(homeTeam);
 % showCITables(winningData, losingData, marginData);
 
 % Plot season means for various statistics per season - will print the p-values for each stat
-showSeasonMeans(homeTeam, awayTeam);
+% showSeasonMeans(homeTeam, awayTeam);
 
