@@ -56,11 +56,12 @@ function bestSigma2 = calSigma(data, dataType)
     % Plotting the plot of the best sigma with fixed mu values
     subplot(1,2,1)
     hold on
-    plot(sigma2Range, lnFwin)
-    plot(bestSigma2, lnFMax, 'r*')
+    plot(sigma2Range, lnFwin,  'DisplayName', "Fixed \mu = " + muGuess)
+    plot(bestSigma2, lnFMax, 'r*','DisplayName', "Best \sigma^2 = " + bestSigma2)
     title("Maximum Likelihood Function of " + dataType)
     xlabel("\sigma^2")
     ylabel("ln(F)")
+    legend('Location', 'SouthWest')
     hold off
 end
 
@@ -88,10 +89,12 @@ function bestMu = calMu(data, dataType)
     % Plotting the plot of the best mu with fixed sigma values
     subplot(1,2,2)
     hold on
-    plot(muRange, lnFwin)
-    plot(bestMu, lnFMax, 'r*')
+    plot(muRange, lnFwin, 'DisplayName', "Fixed \sigma^2 = " + sigma2Guess)
+    plot(bestMu, lnFMax, 'r*', 'DisplayName', "Best \mu = " + bestMu)
     title("Maximum Likelihood Function of " + dataType)
     xlabel("\mu")
     ylabel("ln(F)")
+    legend('Location', 'SouthWest')
+    
     hold off
 end
