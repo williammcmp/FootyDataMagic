@@ -1,6 +1,27 @@
 % generates all staticall figues for a single season
 function showSeason(homeTeam, awayTeam, year)
-    
+    % showSeason - Generate Statistical Figures for a Single Season
+    %
+    % Syntax:
+    %   showSeason(homeTeam, awayTeam, year)
+    %
+    % Inputs:
+    %   homeTeam - A containers.Map containing home team data for multiple years.
+    %   awayTeam - A containers.Map containing away team data for multiple years.
+    %   year - The specific year for which statistical figures are generated.
+    %
+    % Description:
+    %   This function generates various statistical figures (QQ plots, histograms,
+    %   and boxplots) for a single season of sports data. It examines the normality
+    %   of winning scores, losing scores, and score margins for the specified year.
+    %   It also checks for outliers in the data.
+    %
+    % Example:
+    %   homeTeamData = containers.Map;
+    %   awayTeamData = containers.Map;
+    %   year = '2023';
+    %   showSeason(homeTeamData, awayTeamData, year);    
+
     fig = figure;
     set(fig, 'Name', "Plots of " + year + " season", 'Position', [10, 10, 1100, 900]);
 

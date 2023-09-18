@@ -1,7 +1,31 @@
-% This function calculates and plots the maximum likelihood values for
-% mu (mean) and sigma (standard deviation) for a given dataset.
-
 function [bestMu, bestSigma] = calMaxLiklihood(data, dataType)
+    % calMaxLiklihood - Calculate and Plot Maximum Likelihood Estimates
+    %
+    % Syntax:
+    %   [bestMu, bestSigma] = calMaxLiklihood(data, dataType)
+    %
+    % Inputs:
+    %   data - Input dataset for maximum likelihood estimation.
+    %   dataType - A string specifying the type or name of the dataset.
+    %
+    % Outputs:
+    %   bestMu - Maximum likelihood estimate for the mean (mu) of the dataset.
+    %   bestSigma - Maximum likelihood estimate for the standard deviation (sigma) of the dataset.
+    %
+    % Description:
+    %   This function calculates and plots the maximum likelihood estimates for
+    %   the mean (mu) and standard deviation (sigma) of a given dataset. It
+    %   consists of two sub-functions, calSigma and calMu, that compute the
+    %   maximum likelihood estimates for sigma^2 and mu, respectively.
+    %
+    %   The function also generates plots showing the likelihood functions for
+    %   both parameters.
+    %
+    % Example:
+    %   data = randn(100, 1);  % Sample data assumed to be normally distributed
+    %   dataType = 'Sample Data';
+    %   [bestMu, bestSigma] = calMaxLiklihood(data, dataType);
+
     % Calling the functions to calculate and plot the maximum likelihood values
     figure
     bestSigma = calSigma(data, dataType);

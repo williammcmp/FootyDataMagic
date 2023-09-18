@@ -1,4 +1,26 @@
 function showFirstLastSeason(homeTeam, awayTeam, year1, year2)
+    % showFirstLastSeason - Plot Histograms, Boxplots, and t-tests for Winning,
+    % Losing, and Margin Scores of Two Specific Seasons
+    %
+    % Syntax:
+    %   showFirstLastSeason(homeTeam, awayTeam, year1, year2)
+    %
+    % Inputs:
+    %   homeTeam - A containers.Map containing home team data for multiple years.
+    %   awayTeam - A containers.Map containing away team data for multiple years.
+    %   year1 - The first specific year for comparison.
+    %   year2 - The second specific year for comparison.
+    %
+    % Description:
+    %   This function generates histograms, boxplots, and performs t-tests for
+    %   winning scores, losing scores, and score margins for two specific
+    %   seasons. It provides insights into the distribution and statistical
+    %   differences between the two selected seasons.
+    %
+    % Example:
+    %   homeTeamData = containers.Map;
+    %   awayTeamData = containers.Map;
+    %   showFirstLastSeason(homeTeamData, awayTeamData, 2010, 2020);
 
     fig1 = figure;
     set(fig1, "Name", "Plots of Winning Score", "Position", [10, 10, 1100, 900]);

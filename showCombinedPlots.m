@@ -1,5 +1,22 @@
 function showCombinedPlots(homeTeam, awayTeam)
-    % Plot various statistics for home and away teams over the years.
+    % showCombinedPlots - Plot Various Statistics for Home and Away Teams Over the Years.
+    %
+    % Syntax:
+    %   showCombinedPlots(homeTeam, awayTeam)
+    %
+    % Inputs:
+    %   homeTeam - A containers.Map containing home team data for multiple years.
+    %   awayTeam - A containers.Map containing away team data for multiple years.
+    %
+    % Description:
+    %   This function generates a combined plot of various statistics (margins,
+    %   winning scores, losing scores) for home and away teams over multiple years.
+    %   It creates subplots for each statistic and plots the data for each year.
+    %
+    % Example:
+    %   homeTeamData = containers.Map;
+    %   awayTeamData = containers.Map;
+    %   showCombinedPlots(homeTeamData, awayTeamData);
     
     % Get the years from the keys of homeTeam map
     years = keys(homeTeam);

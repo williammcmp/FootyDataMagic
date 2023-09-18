@@ -1,5 +1,5 @@
 function showCITables(winningData, losingData, marginData)
-    % DISPTABLES - Display tables of data using MATLAB's uitable function.
+    % showCITables - Display tables of data using MATLAB's uitable function.
     %
     % Input:
     %   winningData - Data for winning scores and 95% confidence intervals.
