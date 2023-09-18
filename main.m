@@ -34,4 +34,7 @@ years = keys(homeTeam);
 % showSeasonMeans(homeTeam, awayTeam);
 
 % Means change over time - First vs last season
-showFirstLastSeason(homeTeam, awayTeam, "2011", "2020");
+% showFirstLastSeason(homeTeam, awayTeam, "2011", "2020");
+
+% Max liklihood of a season
+showSeasonMaxLiklihood(homeTeam, awayTeam, "2020")
