@@ -17,7 +17,7 @@ years = keys(homeTeam);
 % showCombinedPlots(homeTeam, awayTeam);
 
 % Show data for a specific season (2016)
-% showSeason(homeTeam, awayTeam, '2016');
+%  showSeason(homeTeam, awayTeam, '2016');
 
 % Show data for each season (distributions, outliers)
 % showAllSeasons(homeTeam, awayTeam);
