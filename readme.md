@@ -13,7 +13,7 @@ This MATLAB project is designed to analyze and visualize Australian Football Lea
 1. Clone this repository to your local machine:
 
     ```bash
-    git clone https://github.com/williammcmp/afl-data-analysis.git
+    git clone https://github.com/williammcmp/FootyDataMagic.git
     ```
 
 2. Open MATLAB and navigate to the project folder.
