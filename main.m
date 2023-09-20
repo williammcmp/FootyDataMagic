@@ -17,10 +17,10 @@ years = keys(homeTeam);
 % showCombinedPlots(homeTeam, awayTeam);
 
 % Show data for a specific season (2016)
-%  showSeason(homeTeam, awayTeam, '2016');
+% showSeason(homeTeam, awayTeam, '2011');
 
 % Show data for each season (distributions, outliers)
-% showAllSeasons(homeTeam, awayTeam);
+showAllSeasons(homeTeam, awayTeam);
 
 % show side-by-side boxplots
 % showBoxPlots(homeTeam, awayTeam);
@@ -37,4 +37,4 @@ years = keys(homeTeam);
 % showFirstLastSeason(homeTeam, awayTeam, "2011", "2020");
 
 % Max liklihood of a season
-showSeasonMaxLiklihood(homeTeam, awayTeam, "2020")
+% showSeasonMaxLiklihood(homeTeam, awayTeam, "2019")

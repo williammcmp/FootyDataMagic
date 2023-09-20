@@ -33,6 +33,7 @@ function showBoxPlots(homeTeam, awayTeam)
      boxplot(data, index)
      xlabel('Season (year)');
      ylabel('Points');
+     title("Winning scores per Season")
      
      % Loosing scores in boxplots - more outliers than in winning data
      fig = figure
@@ -48,6 +49,7 @@ function showBoxPlots(homeTeam, awayTeam)
      boxplot(data, index)
      xlabel('Season (year)');
      ylabel('Points');
+     title ("Losing Scores per Season")
  
      % Margin scores in boxplots - more outliers than in winning data
      fig = figure
@@ -63,4 +65,5 @@ function showBoxPlots(homeTeam, awayTeam)
      boxplot(data, index)
      xlabel('Season (year)');
      ylabel('Points');
+     title("Score Margins per Season")
 end

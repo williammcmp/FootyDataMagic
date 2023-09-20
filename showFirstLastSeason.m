@@ -69,7 +69,7 @@ function showFirstLastSeason(homeTeam, awayTeam, year1, year2)
     xlabel('Season (year)');
     ylabel('Points');
     [h, pValue] = ttest2(winning1, winning2, "Vartype","equal");
-    subtitle("t-test P-value : " + num2str(pValue))
+    subtitle("t-test P-value : " + num2str(pValue) + " t-test test value: Accpect H" + num2str(h))
     title("Winning scores over the years")
 
     fig2 = figure;
@@ -95,7 +95,6 @@ function showFirstLastSeason(homeTeam, awayTeam, year1, year2)
     h = histogram(losing, 15);
     h.Normalization = "pdf";
     title("Histogram of Losing scores - " + num2str(year2));
-    [H, pValue, W] = swtest(losing);
     subtitle("P-value : " + num2str(pValue) + "  W: " + num2str(W));
     xlabel('Points')
 
@@ -119,7 +118,7 @@ function showFirstLastSeason(homeTeam, awayTeam, year1, year2)
     xlabel('Season (year)');
     ylabel('Points');
     [h, pValue] = ttest2(losing1, losing2, "Vartype","equal");
-    subtitle("t-test P-value : " + num2str(pValue))
+    subtitle("t-test P-value : " + num2str(pValue) + " t-test test value: Accpect H" + num2str(h))
     title("Losing scores over the years")
 
     fig3 = figure;
@@ -160,14 +159,12 @@ function showFirstLastSeason(homeTeam, awayTeam, year1, year2)
     margin2 = calMargins(homeTeam(year2), awayTeam(year2));
     data = [margin1;margin2];
     index = [repmat(year1, length(margin1),1);repmat(year2, length(margin2),1)];
-    disp(data)
-    disp(index)
     boxplot(data, index)
     xlabel('Season (year)');
     ylabel('Points');
     [h, pValue] = ttest2(margin1, margin2, "Vartype","equal");
-    subtitle("t-test P-value : " + num2str(pValue))
+    subtitle("t-test P-value : " + num2str(pValue) + " t-test test value: Accpect H" + num2str(h))
     title("Score margins over the years")
-    disp([h,pValue])
+    
 
 end

@@ -14,6 +14,7 @@ function showCITables(winningData, losingData, marginData)
     set(fig1, 'Name', 'Winning Scores 95% CI');
     uitable(fig1, 'Data', winningData, 'ColumnName', columnNames);
 
+
     % Create a figure for losing data
     fig2 = figure;
     set(fig2, 'Name', 'Losing Scores 95% CI');
