@@ -1,4 +1,4 @@
-function showSeasonMeans(homeTeam, awayTeam)
+function showSeasonMeans(homeTeam, awayTeam, removeOutliers)
     % SHOWSEASONMEANS - Plot various statistics per season using homeTeam and awayTeam data.
     %
     % Input:
@@ -29,8 +29,6 @@ function showSeasonMeans(homeTeam, awayTeam)
         % Calculate and store average margin for the season
         marginAvg = [marginAvg; mean(calMargins(homeTeam(years{i}), awayTeam(years{i})))];
 
-        % Calculate and store the number of home team wins for the season
-        homeVsAway = [homeVsAway; sum(homeTeam(years{i}) > awayTeam(years{i}))]; % How often home team wins vs. away team
     end
 
     % Create a figure with a name and specified position
@@ -74,13 +72,7 @@ function showSeasonMeans(homeTeam, awayTeam)
     ylabel('Points');
     legend('Location', 'SouthWest')
 
-%     [homeVsAwayPValue, homeVsAwayTestValue] = calPValue(homeVsAway, (2011:2020));
-%     subplot(4, 1, 4)
-%     plot((2011:2020), homeVsAway, 'DisplayName', "P-value : " + num2str(homeVsAwayPValue))
-%     title("Home Wins per Season")
-%     xlabel('Season (year)');
-%     ylabel('Home Wins')
-%     legend('Location', 'SouthWest')
+
 
     % print the pearson correlation coefficents
     data = {"", "P-values", "Test Value (if < 0.05 then significant)";
