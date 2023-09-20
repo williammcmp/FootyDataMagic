@@ -16,18 +16,26 @@ function showSeasonMeans(homeTeam, awayTeam, removeOutliers)
     winAvg = [];
     loseAvg = [];
     marginAvg = [];
-    homeVsAway = [];
 
     % Loop through each season
     for i = 1:numel(years)
         % Calculate and store average winning score for the season
-        winAvg = [winAvg; mean(calWinningScores(homeTeam(years{i}), awayTeam(years{i})))];
+        win = calWinningScores(homeTeam(years{i}), awayTeam(years{i}));
+        lose = calLossingScores(homeTeam(years{i}), awayTeam(years{i}));
+        margin = calMargins(homeTeam(years{i}), awayTeam(years{i}));
+        
+        if (removeOutliers)
+            [win, winOutliers] = calRemoveOutliers(win)
+            [lose, winOutliers] = calRemoveOutliers(lose)
+            [margin, winOutliers] = calRemoveOutliers(margin)
+        end
+        winAvg = [winAvg; mean(win)];
 
         % Calculate and store average losing score for the season
-        loseAvg = [loseAvg; mean(calLossingScores(homeTeam(years{i}), awayTeam(years{i})))];
+        loseAvg = [loseAvg; mean(lose)];
 
         % Calculate and store average margin for the season
-        marginAvg = [marginAvg; mean(calMargins(homeTeam(years{i}), awayTeam(years{i})))];
+        marginAvg = [marginAvg; mean(margin)];
 
     end
 

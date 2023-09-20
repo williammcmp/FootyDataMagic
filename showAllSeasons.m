@@ -1,5 +1,5 @@
 % Generates the combined fiagues for all seasons
-function showAllSeasons(homeTeam, awayTeam)
+function showAllSeasons(homeTeam, awayTeam, removeOutliers)
 
     years = keys(homeTeam);
     
@@ -12,6 +12,9 @@ function showAllSeasons(homeTeam, awayTeam)
     set(fig, 'Name', 'QQ Plot of Winning Scores versus Normal Distribution');
     for i=1:numel(years)
         winning = calWinningScores(homeTeam(years{i}), awayTeam(years{i}));
+        if (removeOutliers)
+            [winning, winningOutliers] = calRemoveOutliers(winning);
+        end
         pd = makedist('Normal');
         subplot(3,4,i)
         qqplot(winning, pd);
@@ -27,6 +30,9 @@ function showAllSeasons(homeTeam, awayTeam)
     set(fig, 'Name', 'QQ Plot of Losing Scores versus Normal Distribution');
     for i=1:numel(years)
         lossing = calLossingScores(homeTeam(years{i}), awayTeam(years{i}));
+        if (removeOutliers)
+            [lossing, losingOutliers] = calRemoveOutliers(lossing);
+        end
         pd = makedist('Normal');
         subplot(3,4,i)
         qqplot(lossing, pd);
@@ -43,6 +49,9 @@ function showAllSeasons(homeTeam, awayTeam)
     set(fig, 'Name', 'QQ Plot of Scores Margin versus Normal Distribution');
     for i=1:numel(years)
         margin = calMargins(homeTeam(years{i}), awayTeam(years{i}));
+        if (removeOutliers)
+            [margin, marginOutliers] = calRemoveOutliers(margin);
+        end
         pd = makedist('Normal');
         subplot(3,4,i)
         qqplot(margin, pd);

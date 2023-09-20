@@ -1,4 +1,4 @@
-function [winningData, losingData, marginData] = calSeasonMeanCIData(homeTeam, awayTeam, year)
+function [winningData, losingData, marginData] = calSeasonMeanCIData(homeTeam, awayTeam, year, removeOutliers)
     % CALSEASONMEANCIDATA - Generate mean and CI data for a specific season.
     %
     % Input:
@@ -10,6 +10,13 @@ function [winningData, losingData, marginData] = calSeasonMeanCIData(homeTeam, a
     winningsScores = calWinningScores(homeTeam(year), awayTeam(year));
     losingScores = calLossingScores(homeTeam(year), awayTeam(year));
     marginScores = calMargins(homeTeam(year), awayTeam(year));
+
+    if (removeOutliers)
+        % Will remove the outliers from the data
+        [winningsScores, winningRemoved] = calRemoveOutliers(winningsScores);
+        [losingScores, losingRemoved] = calRemoveOutliers(losingScores);
+        [marginScores, marginRemoved] = calRemoveOutliers(marginScores);
+    end
 
     % Calculate mean and 95% confidence intervals for winning, losing, and margin scores
     [winningLeft, winningMean, winningRight] = calMeanCI(winningsScores, 0.9);

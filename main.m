@@ -20,21 +20,21 @@ years = keys(homeTeam);
 % showSeason(homeTeam, awayTeam, '2011');
 
 % Show data for each season (distributions, outliers)
-showAllSeasons(homeTeam, awayTeam);
+% showAllSeasons(homeTeam, awayTeam, true);
 
 % show side-by-side boxplots
 % showBoxPlots(homeTeam, awayTeam);
 
 % mean and CI data for all seasons
-% [winningData, losingData, marginData] = calSeasonsMeanCIData(homeTeam, awayTeam, years);
+% [winningData, losingData, marginData] = calSeasonsMeanCIData(homeTeam, awayTeam, years, true);
 % showCITables(winningData, losingData, marginData);
 
 % Means and P-values per season/year
 % Plot season means for various statistics per season - will print the p-values for each stat (tables are fucked cause of matlab...)
-% showSeasonMeans(homeTeam, awayTeam);
+showSeasonMeans(homeTeam, awayTeam, true);
 
 % Means change over time - First vs last season
 % showFirstLastSeason(homeTeam, awayTeam, "2011", "2020");
 
 % Max liklihood of a season
-% showSeasonMaxLiklihood(homeTeam, awayTeam, "2019")
+% showSeasonMaxLiklihood(homeTeam, awayTeam, "2020")
