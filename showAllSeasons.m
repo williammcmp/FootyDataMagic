@@ -75,6 +75,7 @@ function showAllSeasons(homeTeam, awayTeam, removeOutliers)
         h = histogram(winning, 15);
         h.Normalization = 'pdf';
         title(years{i});
+        xlabel("Points")
     end
     
     % Lossing scores in histogram
@@ -86,6 +87,7 @@ function showAllSeasons(homeTeam, awayTeam, removeOutliers)
         h = histogram(lossing, 15);
         h.Normalization = 'pdf';
         title(years{i});
+        xlabel("Points")
 
     end
     

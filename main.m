@@ -20,7 +20,7 @@ years = keys(homeTeam);
 % showSeason(homeTeam, awayTeam, '2011');
 
 % Show data for each season (distributions, outliers)
-% showAllSeasons(homeTeam, awayTeam, true);
+showAllSeasons(homeTeam, awayTeam, false);
 
 % show side-by-side boxplots
 % showBoxPlots(homeTeam, awayTeam);
@@ -31,10 +31,10 @@ years = keys(homeTeam);
 
 % Means and P-values per season/year
 % Plot season means for various statistics per season - will print the p-values for each stat (tables are fucked cause of matlab...)
-showSeasonMeans(homeTeam, awayTeam, true);
+% showSeasonMeans(homeTeam, awayTeam, true);
 
 % Means change over time - First vs last season
-% showFirstLastSeason(homeTeam, awayTeam, "2011", "2020");
+% showFirstLastSeason(homeTeam, awayTeam, "2011", "2020", false);
 
 % Max liklihood of a season
 % showSeasonMaxLiklihood(homeTeam, awayTeam, "2020")

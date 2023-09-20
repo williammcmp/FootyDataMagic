@@ -1,4 +1,4 @@
-function showSeasonMaxLiklihood(homeTeam, awayTeam, year)
+function showSeasonMaxLiklihood(homeTeam, awayTeam, year, removeOutliers)
     % showSeasonMaxLiklihood - Calculate and Plot Maximum Likelihood Estimates for a Season
     %
     % Syntax:
@@ -25,6 +25,12 @@ function showSeasonMaxLiklihood(homeTeam, awayTeam, year)
     winningData = calWinningScores(homeTeam(year), awayTeam(year));
     losingData = calLossingScores(homeTeam(year), awayTeam(year));
     marginData = calMargins(homeTeam(year), awayTeam(year));
+
+    if (removeOutliers)
+        [winningData, winRemove] = calRemoveOutliers(winningData);
+        [losingData, loswRemove] = calRemoveOutliers(losingData);
+        [marginData, marginRemove] = calRemoveOutliers(marginData);
+    end
 
     % Calculate and plot maximum likelihood estimates for winning scores
     calMaxLiklihood(winningData, "Winning Scores for " + year)

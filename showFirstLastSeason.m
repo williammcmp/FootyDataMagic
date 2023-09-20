@@ -1,4 +1,4 @@
-function showFirstLastSeason(homeTeam, awayTeam, year1, year2)
+function showFirstLastSeason(homeTeam, awayTeam, year1, year2, removeOutliers)
     % showFirstLastSeason - Plot Histograms, Boxplots, and t-tests for Winning,
     % Losing, and Margin Scores of Two Specific Seasons
     %
@@ -32,6 +32,9 @@ function showFirstLastSeason(homeTeam, awayTeam, year1, year2)
     % Winning scores in histogram - year1
     subplot(2,2,1)
     winning = calWinningScores(homeTeam(year1), awayTeam(year1));
+    if (removeOutliers)
+        [winning, winRemoved] = calRemoveOutliers(winning);
+    end
     h = histogram(winning, 15);
     h.Normalization = "pdf";
     title("Histogram of Winning scores - " + num2str(year1));
@@ -42,6 +45,9 @@ function showFirstLastSeason(homeTeam, awayTeam, year1, year2)
     % Winning scores in histogram year2
     subplot(2,2,2)
     winning = calWinningScores(homeTeam(year2), awayTeam(year2));
+    if (removeOutliers)
+        [winning, winRemoved] = calRemoveOutliers(winning);
+    end
     h = histogram(winning, 15);
     h.Normalization = "pdf";
     title("Histogram of Winning scores - " + num2str(year2));
@@ -58,6 +64,12 @@ function showFirstLastSeason(homeTeam, awayTeam, year1, year2)
     subplot(2,1,2)
     winning1 = calWinningScores(homeTeam(year1), awayTeam(year1));
     winning2 = calWinningScores(homeTeam(year2), awayTeam(year2));
+
+    if (removeOutliers)
+        [winning1, winRemoved] = calRemoveOutliers(winning);
+        [winning2, winRemoved] = calRemoveOutliers(winning);
+    end
+
     data = [];
     index = [];
 
@@ -82,6 +94,9 @@ function showFirstLastSeason(homeTeam, awayTeam, year1, year2)
     % losing scores in histogram - year1
     subplot(2,2,1)
     losing = calLossingScores(homeTeam(year1), awayTeam(year1));
+    if (removeOutliers)
+        [losing, winRemoved] = calRemoveOutliers(losing);
+    end
     h = histogram(losing, 15);
     h.Normalization = "pdf";
     title("Histogram of Losing scores - " + num2str(year1));
@@ -92,6 +107,9 @@ function showFirstLastSeason(homeTeam, awayTeam, year1, year2)
     % Losing scores in histogram year2
     subplot(2,2,2)
     losing = calLossingScores(homeTeam(year2), awayTeam(year2));
+    if (removeOutliers)
+        [losing, winRemoved] = calRemoveOutliers(losing);
+    end
     h = histogram(losing, 15);
     h.Normalization = "pdf";
     title("Histogram of Losing scores - " + num2str(year2));
@@ -107,6 +125,10 @@ function showFirstLastSeason(homeTeam, awayTeam, year1, year2)
     subplot(2,1,2)
     losing1 = calLossingScores(homeTeam(year1), awayTeam(year1));
     losing2 = calLossingScores(homeTeam(year2), awayTeam(year2));
+    if (removeOutliers)
+        [losing1, winRemoved] = calRemoveOutliers(losing);
+        [losing2, winRemoved] = calRemoveOutliers(losing);
+    end
     data = [];
     index = [];
 
@@ -131,6 +153,9 @@ function showFirstLastSeason(homeTeam, awayTeam, year1, year2)
     % Margin scores in histogram - year1
     subplot(2,2,1)
     margin = calMargins(homeTeam(year1), awayTeam(year1));
+    if (removeOutliers)
+        [margin, winRemoved] = calRemoveOutliers(margin);
+    end
     h = histogram(margin, 15);
     h.Normalization = "pdf";
     title("Histogram of Margin scores - " + num2str(year1));
@@ -141,6 +166,9 @@ function showFirstLastSeason(homeTeam, awayTeam, year1, year2)
     % Margin scores in histogram year2
     subplot(2,2,2)
     margin = calMargins(homeTeam(year2), awayTeam(year2));
+    if (removeOutliers)
+        [margin, winRemoved] = calRemoveOutliers(margin);
+    end
     h = histogram(margin, 15);
     h.Normalization = "pdf";
     title("Histogram of Margin scores - " + num2str(year2));
@@ -157,6 +185,12 @@ function showFirstLastSeason(homeTeam, awayTeam, year1, year2)
     subplot(2,1,2)
     margin1 = calMargins(homeTeam(year1), awayTeam(year1));
     margin2 = calMargins(homeTeam(year2), awayTeam(year2));
+    
+    if (removeOutliers)
+        [margin1, winRemoved] = calRemoveOutliers(margin);
+        [margin2, winRemoved] = calRemoveOutliers(margin);
+    end
+
     data = [margin1;margin2];
     index = [repmat(year1, length(margin1),1);repmat(year2, length(margin2),1)];
     boxplot(data, index)

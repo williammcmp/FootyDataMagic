@@ -28,6 +28,7 @@ function [bestMu, bestSigma] = calMaxLiklihood(data, dataType)
 
     % Calling the functions to calculate and plot the maximum likelihood values
     figure
+    
     bestSigma = calSigma(data, dataType);
     bestMu = calMu(data, dataType);
 end
