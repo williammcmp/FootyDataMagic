@@ -4,6 +4,8 @@
 
 This MATLAB project is designed to analyze and visualize Australian Football League (AFL) data. It includes various functions and scripts for data import, statistical analysis, and visualization of different aspects of AFL games.
 
+![Image Alt Text](/figures%20for%20report/009_season_averages.jpg)
+
 ## Prerequisites
 
 - MATLAB installed on your computer.
