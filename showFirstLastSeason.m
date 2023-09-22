@@ -80,7 +80,7 @@ function showFirstLastSeason(homeTeam, awayTeam, year1, year2, removeOutliers)
     boxplot(data, index)
     xlabel('Season (year)');
     ylabel('Points');
-    [h, pValue] = ttest2(winning1, winning2, "Vartype","equal");
+    [h, pValue] = ttest2(winning1, winning2, "Vartype","unequal");
     subtitle("t-test P-value : " + num2str(pValue) + " t-test test value: Accpect H" + num2str(h))
     title("Winning scores over the years")
 
@@ -139,7 +139,7 @@ function showFirstLastSeason(homeTeam, awayTeam, year1, year2, removeOutliers)
     boxplot(data, index)
     xlabel('Season (year)');
     ylabel('Points');
-    [h, pValue] = ttest2(losing1, losing2, "Vartype","equal");
+    [h, pValue] = ttest2(losing1, losing2, "Vartype","unequal");
     subtitle("t-test P-value : " + num2str(pValue) + " t-test test value: Accpect H" + num2str(h))
     title("Losing scores over the years")
 
@@ -196,7 +196,7 @@ function showFirstLastSeason(homeTeam, awayTeam, year1, year2, removeOutliers)
     boxplot(data, index)
     xlabel('Season (year)');
     ylabel('Points');
-    [h, pValue] = ttest2(margin1, margin2, "Vartype","equal");
+    [h, pValue] = ttest2(margin1, margin2, "Vartype","unequal");
     subtitle("t-test P-value : " + num2str(pValue) + " t-test test value: Accpect H" + num2str(h))
     title("Score margins over the years")
     
