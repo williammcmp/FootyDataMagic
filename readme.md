@@ -1,5 +1,7 @@
 # AFL Data Analysis Project
 
+All code found in this repo (unless otherwise stated) is developed and written in completion by [William McMahon-Puce](https://www.linkedin.com/in/william-mcmahon-puce-b9b3a9210/) over the course of 2023 S2 at while studying at Swinburne University of Technology. Use of GPT was used for the generation of docstrings and documentation.
+
 ## Overview
 
 This MATLAB project is designed to analyze and visualize Australian Football League (AFL) data. It includes various functions and scripts for data import, statistical analysis, and visualization of different aspects of AFL games.
